@@ -1,0 +1,31 @@
+{
+"name": "微指数微信数据抓取程序",
+"version": "1.0.0",
+"manifest_version": 2,
+"description": "Wechat user keys generator",
+"browser_action": {
+"default_title": "Wechat user keys generator",
+"default_icon": "icon.png"
+},
+"icons": 
+  { 
+    "16": "icon.png",             
+    "48": "icon.png",            
+    "128": "icon.png" 
+  }, 
+"homepage_url": "http://www.baidu.com/",
+"permissions": [
+	"http://*/*",
+	"unlimitedStorage",
+	"contextMenus",
+	"cookies",
+      "tabs"
+],
+"content_scripts": [
+    {
+      "matches": ["http://weixin.sogou.com/*"],
+	    "run_at": "document_end",
+      "js": ["jquery.min.js","main.js"]
+    }
+  ]
+}
